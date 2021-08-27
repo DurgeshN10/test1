@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Ebook</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+    <style type="text/css">
+      body {
+        overflow: hidden;
+        background-color: aqua;
+        background-size: 100% 100%;
+        position: relative;
+      }
+      #album {
+        width: 1152px;
+        height: 752px;
+        margin: 1% auto;
+        position: relative;
+      }
+
+      .lvideo {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border: 10px solid gold !important;
+        opacity: 0.6;
+        transition: all 1s ease-in-out;
+        box-shadow: 12px 9px 13px rgba(255, 0, 255, 0.75);
+        margin: 25px 0px 0px 25px;
+        position: -webkit-sticky;
+      }
+      .pvideo {
+        width: 150px;
+        height: 200px;
+        border: 10px solid gold !important;
+        opacity: 0.6;
+        transition: all 1s ease-in-out;
+        box-shadow: 12px 9px 13px rgba(255, 0, 255, 0.75);
+        margin: 25px 0px 0px 25px;
+        position: -webkit-sticky;
+      }
+      #coverpage {
+        background-image: url("page/_temp_cover.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      #bookpage {
+        background-image: url("page/bg.jpg");
+        /* background-size: cover; */
+      }
+
+      .lvideotext {
+        margin: 5px 0px 0px 25px;
+        width: 95%;
+        line-height: 26px;
+        font-size: 16px;
+        text-align: left;
+        position: relative;
+        color: white;
+      }
+
+      .pvideotext {
+        margin: 5px 0px 0px 25px;
+        width: 95%;
+        line-height: 26px;
+        font-size: 16px;
+        text-align: left;
+        position: relative;
+        color: white;
+      }
+      .video-container {
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="album">
+      <div id="coverpage"></div>
+      <div id="bookpage">
+        <embed
+          src="videos/PDF1.pdf"
+          type="application/pdf"
+          width="500px"
+          height="300px"
+          style="margin: 25px 0px 0px 25px"
+          download
+        />
+        <p class="lvideotext">&lt;Student Name&gt; Grade &lt;Number&gt;</p>
+      </div>
+      <div id="bookpage">
+        <div class="video-container">
+          <video class="lvideo" id="vid1" controls>
+            <source
+              src="videos/Pooja Agarwal Presentation.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <p class="lvideotext">Grade 2 Student</p>
+        </div>
+
+        <div class="video-container">
+          <video class="pvideo" id="vid2" controls>
+            <source src="videos/Aditva.mp4" type="video/mp4" />
+          </video>
+          <p class="pvideotext">Advita Grade 2</p>
+        </div>
+      </div>
+      <div id="bookpage">
+        <div class="gallery">
+          <div class="image-container">
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="bookpage">
+        <div class="gallery">
+          <div class="image-container">
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+              <a href="./page/bg.jpg" class="image ">
+                  <img src="./page/bg.jpg" alt="">
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="turn.js"></script>
+    <!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!-- <script>
+      $("#album").turn({ gradients: true, acceleration: true });
+    </script> -->
+    
+
+    <script type="text/javascript">
+    
+      $(window).ready(function () {
+        $("#album").turn({
+          display: "double",
+          acceleration: true,
+          gradients: !$.isTouch,
+          elevation: 50,
+          when: {
+            turned: function (e, page) {
+              /*console.log('Current view: ', $(this).turn('view'));*/
+            },
+          },
+        });
+      });
+
+      $(window).bind("keydown", function (e) {
+        if (e.keyCode == 37) $("#album").turn("previous");
+        else if (e.keyCode == 39) $("#album").turn("next");
+      });
+
+     
+
+     
+ $(window).resize(function() {
+
+  if ($(window).width() <= 600) {
+     $('.resolution').html("Current Window Size " + $(window).width());
+     $('body').css('margin-top', '300px');
+   }
+   if ($(window).width() >= 600) {
+     $('.resolution').html("Current Window Size " + $(window).width());
+     $('body').css('margin-top', '150px');
+   }
+ });
+   
+   </script>
+  </body>
+  <script src="./js/script.js"></script>
+</html>
