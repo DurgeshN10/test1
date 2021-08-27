@@ -1,0 +1,79 @@
+
+.gallery{
+    margin: 20px 0;
+}
+
+.gallery .controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:20px 0;
+    list-style: none;
+}
+
+.gallery .controls .buttons{
+    height:40px;
+    width: 140px;
+    background:#fff;
+    color:#666;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    margin:20px;
+    border-radius: 25px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    text-align: center;
+    text-transform: capitalize;
+}
+.gallery .controls .buttons:hover{
+    background: #359cd8;
+    color:#fff;
+    transition: ease-out .5s all;
+    -webkit-transition: ease-out .5s all;
+    -moz-transition: ease-out .5s all;
+    -o-transition: ease-out .5s all;
+}
+
+.gallery .controls .buttons.active{
+    background: #359cd8;
+    color:#fff;
+}
+
+.gallery .image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    -webkit-flex-wrap:wrap;
+}
+
+.gallery .image-container .image{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border:10px solid #fff;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.gallery .image-container .image img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.gallery .image-container .image:hover img{
+    transform: scale(1.4);
+    transition: ease-out .5s all;
+    -webkit-transition: ease-out .5s all;
+    -moz-transition: ease-out .5s all;
+    -o-transition: ease-out .5s all;
+}
+@media only screen and (max-width: 600px) {
+    .mfp-ready{
+        width: 120% !important;
+    }
+  }
+
